@@ -1,17 +1,17 @@
-#base the docker container off of a trusted golang image
+# base the docker container off of the official golang image
 FROM golang:latest
 
-#install goose
+# install goose
 RUN go get 'bitbucket.org/liamstask/goose/cmd/goose'
 
-#mount the app
+# mount the app
 RUN mkdir -p /opt/db
 ONBUILD ADD ./dbconf.yml /opt/db/dbconf.yml
 ONBUILD ADD ./migrations /opt/db/migrations
 
-#set the working directory to /opt/go/app
+# set the working directory to /opt/
 WORKDIR /opt/
 
-#define go as the entrypoint
+# define goose as the entrypoint
 ENTRYPOINT ["/go/bin/goose", "--env=default"]
 CMD ["up"]
