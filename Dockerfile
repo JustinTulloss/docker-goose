@@ -12,6 +12,8 @@ ONBUILD ADD ./migrations /opt/db/migrations
 # set the working directory to /opt/
 WORKDIR /opt/
 
+ENV GOOSE_ENV default
+
 # define goose as the entrypoint
-ENTRYPOINT ["/go/bin/goose", "--env=default"]
+ENTRYPOINT ["/go/bin/goose", "--env=$GOOSE_ENV"]
 CMD ["up"]
