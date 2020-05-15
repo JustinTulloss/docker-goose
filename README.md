@@ -1,5 +1,3 @@
-![](https://img.shields.io/github/license/cstroe/docker-goose) ![](https://img.shields.io/github/v/tag/cstroe/docker-goose)
-
 # docker-goose
 
 This image allows you to run your [Goose][1] migrations from a Docker container.
@@ -17,7 +15,7 @@ Use
         open: $DATABASE_URL
     ```
 
-- Your `Dockerfile` should contain `FROM cstroe/docker-goose:latest`. Most won't need
+- Your `Dockerfile` should contain `FROM jmtulloss/docker-goose:latest`. Most won't need
   anything more.
 
 - Build and run your new container. The Docker engine will `ADD` your `dbconf.yml` and
@@ -45,7 +43,7 @@ myenv:
 And the following `Dockerfile-goose`:
 
 ```dockerfile
-FROM cstroe/docker-goose:latest
+FROM jmtulloss/docker-goose:latest
 ```
 
 And a `docker-compose.yml` file similar to this:
