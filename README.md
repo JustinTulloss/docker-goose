@@ -28,6 +28,7 @@ Configuration
 The following environment variables can be passed to the container:
 
 * `GOOSE_ENV` - customizes the goose `-env` flag value.  Defaults to `default`.
+* `DEBUG` - if this environment variable is defined, print values of environment variables.
 
 Example
 -------
@@ -87,3 +88,4 @@ That will start the database and run the migrations.
 [3]: https://github.com/shopkeep/goose
 [4]: https://github.com/pressly/goose
 [5]: https://docs.docker.com/engine/reference/builder/#onbuild
+
